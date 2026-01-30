@@ -1,0 +1,10 @@
+language js(jsx)
+
+jsx_attribute(name=$name) as $attr where {
+  $name <: or { `class`, `className` },
+  register_diagnostic(
+    span = $attr,
+    severity = "info",
+    message = "Are you sure this class attribute is necessary?"
+  )
+}
