@@ -1,5 +1,5 @@
+import "uno:theme.css"
 import "virtual:uno.css"
-import "./app.css"
 
 import {
   ColorModeProvider,
@@ -9,10 +9,9 @@ import {
 import { Link, MetaProvider } from "@solidjs/meta"
 import { Router } from "@solidjs/router"
 import { FileRoutes } from "@solidjs/start/router"
-import { Suspense } from "solid-js"
-import { isServer } from "solid-js/web"
+import { isServer, Suspense } from "solid-js/web"
 import { getCookie } from "vinxi/http"
-import Nav from "~/components/nav"
+import Layout from "./components/layout/layout"
 
 function getServerCookies() {
   "use server"
@@ -50,10 +49,7 @@ export default function App() {
           <ColorModeScript storageType={storageManager.type} />
           <ColorModeProvider storageManager={storageManager}>
             <Suspense>
-              <Nav />
-              <div class="pt-22 max-w-800px mx-a">
-                <Suspense>{props.children}</Suspense>
-              </div>
+              <Layout>{props.children}</Layout>
             </Suspense>
           </ColorModeProvider>
         </MetaProvider>
