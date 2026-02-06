@@ -1,6 +1,3 @@
-import "uno:theme.css"
-import "virtual:uno.css"
-
 import {
   ColorModeProvider,
   ColorModeScript,
@@ -11,7 +8,12 @@ import { Router } from "@solidjs/router"
 import { FileRoutes } from "@solidjs/start/router"
 import { isServer, Suspense } from "solid-js/web"
 import { getCookie } from "vinxi/http"
+import "virtual:uno.css"
 import Layout from "./components/layout/layout"
+
+// Intentionally placed last after uno.css
+// Separated to avoid auto imports organize
+import "uno:theme.css"
 
 function getServerCookies() {
   "use server"
