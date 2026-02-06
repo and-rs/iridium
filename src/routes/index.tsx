@@ -1,4 +1,5 @@
 import Brand from "~/components/brand"
+import { SpaSvg } from "~/components/spa-svg"
 
 export default function Home() {
   return (
@@ -11,8 +12,9 @@ export default function Home() {
           </span>
         </div>
 
-        <div class="flex row-start-2 gap-3 md:col-span-2 bento-cell">
+        <div class="flex row-start-2 gap-3 justify-center md:col-span-2 bento-cell">
           {/* add some performance metrics here */}
+          <SpaSvg />
         </div>
 
         <div class="flex flex-col gap-3 sm:flex-row md:flex-col bento-cell centered md:aspect-square">
