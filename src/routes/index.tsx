@@ -1,20 +1,20 @@
 import Brand from "~/components/brand"
-import { SpaSvg } from "~/components/spa-svg"
+import Spa from "~/components/spa"
 
 export default function Home() {
   return (
     <main class="p-4">
-      <div class="grid grid-cols-1 gap-3 mb-3 md:grid-cols-3 grid-rows-[auto_1fr]">
-        <div class="flex flex-col gap-4 md:col-span-3 h-min bento-cell">
+      <div class="grid grid-cols-1 grid-rows-3 gap-3 mb-3 md:grid-cols-3 md:grid-rows-[auto_1fr]">
+        <div class="flex flex-col gap-4 md:col-span-3 bento-cell md:h-min">
           <Brand size="lg" />
           <span class="text-xl">
             Systems Research &amp; Developer Infrastructure Lab.
           </span>
         </div>
 
-        <div class="flex row-start-2 gap-3 justify-center md:col-span-2 bento-cell">
-          {/* add some performance metrics here */}
-          <SpaSvg />
+        <div class="flex row-start-2 gap-3 justify-center md:col-span-2 md:justify-start bento-cell">
+          {/* TODO: add some performance metrics here */}
+          <Spa />
         </div>
 
         <div class="flex flex-col gap-3 sm:flex-row md:flex-col bento-cell centered md:aspect-square">
