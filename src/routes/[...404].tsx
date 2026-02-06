@@ -2,10 +2,8 @@ import { A } from "@solidjs/router"
 
 export default function NotFound() {
   return (
-    <main class="text-center mx-auto p-4">
-      <h1 class="my-16 text-6xl font-thin">
-        Not Found
-      </h1>
+    <main class="p-4 mx-auto text-center">
+      <h1 class="my-16 text-6xl font-thin">Not Found</h1>
       <p>
         Visit{" "}
         <a href="https://solidjs.com" target="_blank" rel="noopener">
@@ -16,7 +14,7 @@ export default function NotFound() {
       <p>
         <A href="/">Home</A>
         {" - "}
-        <A href="/about">About Page</A>
+        <A href="/team">Team</A>
       </p>
     </main>
   )
