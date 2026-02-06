@@ -1,3 +1,5 @@
+import { promises as fs } from "node:fs"
+import { resolve } from "node:path"
 import {
   defineConfig,
   presetWebFonts,
@@ -7,6 +9,15 @@ import {
 
 export default defineConfig({
   transformers: [transformerDirectives()],
+  preflights: [
+    {
+      layer: "theme",
+      getCSS: async () => {
+        const filePath = resolve(process.cwd(), "src/theme.css")
+        return fs.readFile(filePath, "utf-8")
+      },
+    },
+  ],
   presets: [
     presetWind4(),
     presetWebFonts({
@@ -17,14 +28,6 @@ export default defineConfig({
       },
     }),
   ],
-  shortcuts: {
-    "btn-link-active": "border-b-2 border-primary text-xl font-sans",
-    "btn-link-inactive":
-      "border-b-2 border-transparent text-xl font-sans hover:border-muted",
-    "bento-cell":
-      "bg-card border-2 border-muted p-4 shadow hover:border-secondary transition-all",
-    centered: "flex justify-center items-center",
-  },
   theme: {
     colors: {
       foreground: "var(--foreground)",
@@ -34,6 +37,7 @@ export default defineConfig({
       success: "var(--success)",
       accent: "var(--accent)",
       muted: "var(--muted)",
+      light: "var(--light)",
       card: "var(--card)",
     },
     breakpoints: {
