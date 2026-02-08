@@ -1,0 +1,10 @@
+id: route-component-arrow-function
+language: tsx
+severity: error
+message: Route components must be arrow functions, not function declarations.
+files:
+  - src/routes/**/*.tsx
+rule:
+  kind: export_statement
+  has:
+    kind: function_declaration
