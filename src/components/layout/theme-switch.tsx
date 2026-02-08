@@ -5,7 +5,7 @@ import Sun from "lucide-solid/icons/sun"
 import { createSignal, onMount, Show } from "solid-js"
 import { Button } from "../ui/button"
 
-export function ThemeSwitch() {
+export const ThemeSwitch = () => {
   const { colorMode, setColorMode } = useColorMode()
   const [mounted, setMounted] = createSignal(false)
 

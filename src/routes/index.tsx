@@ -1,7 +1,7 @@
-import Brand from "~/components/brand"
-import Spa from "~/components/spa"
+import { Brand } from "~/components/brand"
+import { Spa } from "~/components/spa"
 
-export default function Home() {
+const HomeRoute = () => {
   return (
     <main class="p-4">
       <div class="grid grid-cols-1 grid-rows-3 gap-3 mb-3 md:grid-cols-3 md:grid-rows-[auto_1fr]">
@@ -35,3 +35,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default HomeRoute

@@ -1,6 +1,6 @@
-import Brand from "../brand"
+import { Brand } from "../brand"
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <footer class="flex flex-col-reverse gap-12 justify-between mx-4 mb-4 sm:flex-row bento-cell">
       <div class="flex flex-col gap-4 justify-between">

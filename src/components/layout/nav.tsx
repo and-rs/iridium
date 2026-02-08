@@ -1,7 +1,7 @@
 import { useLocation } from "@solidjs/router"
 import { ThemeSwitch } from "./theme-switch"
 
-export default function Nav() {
+export const Nav = () => {
   const location = useLocation()
   const active = (path: string) => path === location.pathname
 

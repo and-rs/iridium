@@ -21,7 +21,7 @@ const CONFIG = {
   },
 } as const
 
-export default function Brand(props: { size?: BrandSize; class?: string }) {
+export const Brand = (props: { size?: BrandSize; class?: string }) => {
   const size = props.size || "md"
   const variant = CONFIG[size]
   let ref: HTMLHeadingElement | undefined

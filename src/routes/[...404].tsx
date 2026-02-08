@@ -1,6 +1,6 @@
 import { A } from "@solidjs/router"
 
-export default function NotFound() {
+const NotFoundRoute = () => {
   return (
     <main class="p-4 mx-auto text-center">
       <h1 class="my-16 text-6xl font-thin">Not Found</h1>
@@ -19,3 +19,5 @@ export default function NotFound() {
     </main>
   )
 }
+
+export default NotFoundRoute
