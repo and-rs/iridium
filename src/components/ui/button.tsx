@@ -11,6 +11,7 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-muted shadow-sm hover:bg-secondary",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
       },
       size: {
         default: "h-9 px-4 py-2",
