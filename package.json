@@ -6,6 +6,12 @@
     "build": "bun -b run vinxi build",
     "start": "bun -b run vinxi start"
   },
+  "devEngines": {
+    "runtime": {
+      "name": "bun",
+      "version": ">=1.2.0"
+    }
+  },
   "dependencies": {
     "@kobalte/core": "^0.13.11",
     "@solidjs/meta": "^0.29.4",
@@ -20,14 +26,11 @@
     "unocss": "^66.6.0",
     "vinxi": "^0.5.11"
   },
-  "engines": {
-    "node": ">=22"
-  },
   "devDependencies": {
     "@biomejs/biome": "2.3.13",
-    "@types/node": "^25.0.10",
-    "baseline-browser-mapping": "^2.9.18",
-    "globals": "^17.2.0"
+    "@types/node": "^25.2.2",
+    "baseline-browser-mapping": "^2.9.19",
+    "globals": "^17.3.0"
   },
-  "packageManager": "pnpm@10.28.2+sha512.41872f037ad22f7348e3b1debbaf7e867cfd448f2726d9cf74c08f19507c31d2c8e7a11525b983febc2df640b5438dee6023ebb1f84ed43cc2d654d2bc326264"
+  "packageManager": "pnpm@10.29.1+sha512.48dae233635a645768a3028d19545cacc1688639eeb1f3734e42d6d6b971afbf22aa1ac9af52a173d9c3a20c15857cfa400f19994d79a2f626fcc73fccda9bbc"
 }
