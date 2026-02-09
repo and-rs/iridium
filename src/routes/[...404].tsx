@@ -2,19 +2,13 @@ import { A } from "@solidjs/router"
 
 const NotFoundRoute = () => {
   return (
-    <main class="p-4 mx-auto text-center">
-      <h1 class="my-16 text-6xl font-thin">Not Found</h1>
-      <p>
-        Visit{" "}
-        <a href="https://solidjs.com" target="_blank" rel="noopener">
-          solidjs.com
-        </a>{" "}
-        to learn how to build Solid apps.
-      </p>
-      <p>
-        <A href="/">Home</A>
-        {" - "}
-        <A href="/team">Team</A>
+    <main class="m-4 text-center bento-cell">
+      <h1 class="my-4">Not Found</h1>
+      <p class="font-mono text-2xl">
+        <span>404 - </span>
+        <A class="underline" href="/">
+          Go back home
+        </A>
       </p>
     </main>
   )

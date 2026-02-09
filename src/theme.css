@@ -41,6 +41,9 @@ h1 {
 h2 {
   --uno: "text-4xl font-semibold tracking-tighter text-primary";
 }
+h3 {
+  --uno: "text-2xl font-semibold tracking-tight text-primary";
+}
 body {
   --uno: "bg-background text-foreground antialiased";
   font-family: var(--font-sans);
