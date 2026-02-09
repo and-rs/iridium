@@ -32,11 +32,13 @@ export const Spa = () => {
     animate([pathRef1, pathRef2], {
       opacity: [0, 1],
       duration: 1000,
+      delay: 1500,
       ease: "inOutCirc",
     })
     animate(carRef, {
       opacity: [0, 1],
       duration: 1000,
+      delay: 1500,
       ease: "inOutCirc",
     })
 

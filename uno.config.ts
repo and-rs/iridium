@@ -1,4 +1,4 @@
-import { promises as fs } from "node:fs"
+import { readFile } from "node:fs/promises"
 import { resolve } from "node:path"
 import {
   defineConfig,
@@ -13,8 +13,8 @@ export default defineConfig({
     {
       layer: "theme",
       getCSS: async () => {
-        const filePath = resolve(process.cwd(), "src/theme.css")
-        return fs.readFile(filePath, "utf-8")
+        const filePath = resolve(__dirname, "src/theme.css")
+        return readFile(filePath, "utf-8")
       },
     },
   ],
