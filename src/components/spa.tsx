@@ -59,41 +59,55 @@ export const Spa = () => {
   })
 
   return (
-    <div class="overflow-hidden h-full">
-      <svg
-        viewBox="-10 -10 521.68 340.48"
-        class="block w-auto max-w-full h-full"
-        preserveAspectRatio="xMidYMid meet"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <title>Spa Francorchamps SVG</title>
-        <path
-          d={PATH_DATA}
-          fill="none"
-          class="text-secondary/80"
-          stroke="currentColor"
-          stroke-width="6"
-        />
-        <path
-          ref={pathRef1}
-          d={PATH_DATA}
-          fill="none"
-          class="opacity-0 text-success"
-          stroke="currentColor"
-          stroke-width="6"
-        />
-        <path
-          ref={pathRef2}
-          d={PATH_DATA}
-          fill="none"
-          class="opacity-0 text-success"
-          stroke="currentColor"
-          stroke-width="6"
-        />
-        <g ref={carRef} class="opacity-0 text-success">
-          <polygon points="11,0 -11,-11 -11,11" fill="currentColor" />
-        </g>
-      </svg>
-    </div>
+    <section class="flex flex-col justify-center items-center w-full h-full mx-a bento-cell md:aspect-square">
+      <div class="overflow-hidden h-full">
+        <svg
+          viewBox="-10 -10 521.68 340.48"
+          class="w-full h-full aspect-square md:aspect-auto"
+          preserveAspectRatio="xMidYMid meet"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>Spa Francorchamps SVG</title>
+          <path
+            d={PATH_DATA}
+            fill="none"
+            class="text-secondary/80"
+            stroke="currentColor"
+            stroke-width="6"
+          />
+          <path
+            ref={pathRef1}
+            d={PATH_DATA}
+            fill="none"
+            class="opacity-0 text-success"
+            stroke="currentColor"
+            stroke-width="6"
+          />
+          <path
+            ref={pathRef2}
+            d={PATH_DATA}
+            fill="none"
+            class="opacity-0 text-success"
+            stroke="currentColor"
+            stroke-width="6"
+          />
+          <g ref={carRef} class="opacity-0 text-success">
+            <polygon points="11,0 -11,-11 -11,11" fill="currentColor" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="flex flex-col gap-3 w-full">
+        <span class="pb-1 font-bold text-light border-b-[2px] border-muted">
+          Circuit of Spa-Francorchamps, Belgium.
+        </span>
+        <p class="text-xl">
+          Software engineering should be treated like racing. Perfomance should
+          be quantified and measured. Iteration for better
+          <span class="text-success"> (lap)</span>times is the only path to
+          success.
+        </p>
+      </div>
+    </section>
   )
 }
