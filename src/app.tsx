@@ -10,7 +10,7 @@ import { isServer, Suspense } from "solid-js/web"
 import { getCookie } from "vinxi/http"
 import { Layout } from "./components/layout/layout"
 
-function getServerCookies() {
+function getThemeServer() {
   "use server"
   const colorMode = getCookie("kb-color-mode")
   return colorMode ? `kb-color-mode=${colorMode}` : ""
@@ -18,7 +18,7 @@ function getServerCookies() {
 
 const App = () => {
   const storageManager = cookieStorageManagerSSR(
-    isServer ? getServerCookies() : document.cookie,
+    isServer ? getThemeServer() : document.cookie,
   )
 
   return (
