@@ -1,5 +1,26 @@
-import { A } from "@solidjs/router"
+import Github from "lucide-solid/icons/github"
+import Linkedin from "lucide-solid/icons/linkedin"
+import { For } from "solid-js"
+import { NavLink } from "~/components/ui/navlink"
 import { Brand } from "../brand"
+
+const INTERNAL_ROUTES = [
+  { href: "/", label: "Home" },
+  { href: "/case-studies", label: "Case Studies" },
+]
+
+const EXTERNAL_LINKS = [
+  {
+    href: "https://www.linkedin.com/company/iridium-tech",
+    label: "LinkedIn",
+    icon: Linkedin,
+  },
+  {
+    href: "https://www.github.com/and-rs/iridium",
+    label: "GitHub",
+    icon: Github,
+  },
+]
 
 export const Footer = () => {
   return (
@@ -14,35 +35,31 @@ export const Footer = () => {
       </div>
 
       <div class="flex flex-col gap-6 mr-14 md:flex-[1/3]">
-        <div>
-          <span class="text-xl font-bold text-primary">Read more...</span>
-          <ul class="flex flex-col gap-1 disc-none w-fit">
-            <li class="whitespace-nowrap">
-              <A href="/">Home</A>
-            </li>
-
-            <li class="whitespace-nowrap">
-              <A href="/case-studies">Case Studies</A>
-            </li>
-          </ul>
+        <div class="flex flex-col gap-2">
+          <span class="text-xl font-bold text-primary">Read more</span>
+          <For each={INTERNAL_ROUTES}>
+            {(route) => (
+              <NavLink
+                class="text-base"
+                href={route.href}
+                label={route.label}
+              />
+            )}
+          </For>
         </div>
 
-        <div>
-          <span class="text-xl font-bold text-primary">Find us in...</span>
-          <ul class="flex flex-col gap-1 disc-none w-fit">
-            <li>
-              <A
-                href="https://www.linkedin.com/company/iridium-tech"
-                target="_blank"
-                rel="noopener"
-              >
-                LinkedIn
-              </A>
-            </li>
-            <li>
-              <A href="/">GitHub</A>
-            </li>
-          </ul>
+        <div class="flex flex-col gap-2">
+          <span class="text-xl font-bold text-primary">Other sites</span>
+          <For each={EXTERNAL_LINKS}>
+            {(link) => (
+              <NavLink
+                class="text-base"
+                href={link.href}
+                label={link.label}
+                icon={link.icon}
+              />
+            )}
+          </For>
         </div>
       </div>
     </footer>

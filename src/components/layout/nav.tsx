@@ -1,26 +1,21 @@
-import { A, useLocation } from "@solidjs/router"
+import { For } from "solid-js"
+import { NavLink } from "~/components/ui/navlink"
 import { ThemeSwitch } from "./theme-switch"
 
-export const Nav = () => {
-  const location = useLocation()
-  const active = (path: string) => path === location.pathname
+const INTERNAL_ROUTES = [
+  { href: "/", label: "Home" },
+  { href: "/case-studies", label: "Case Studies" },
+]
 
+export const Nav = () => {
   return (
     <nav class="max-w-800px mx-a">
-      <ul class="flex fixed gap-4 p-4 m-4 border-2 shadow z-60 border-muted bg-card">
-        <li class={active("/") ? "btn-link-active" : "btn-link-inactive"}>
-          <A href="/">Home</A>
-        </li>
-
-        <li
-          class={
-            active("/case-studies") ? "btn-link-active" : "btn-link-inactive"
-          }
-        >
-          <A href="/case-studies">Case Studies</A>
-        </li>
+      <div class="flex fixed gap-4 p-4 m-4 border-2 shadow z-60 border-muted bg-card">
+        <For each={INTERNAL_ROUTES}>
+          {(route) => <NavLink href={route.href} label={route.label} />}
+        </For>
         <ThemeSwitch />
-      </ul>
+      </div>
     </nav>
   )
 }

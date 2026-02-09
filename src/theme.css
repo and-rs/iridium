@@ -23,10 +23,10 @@
 }
 
 .btn-link-active {
-  --uno: "border-b-2 border-primary text-xl font-sans";
+  --uno: "border-b-2 border-primary font-sans";
 }
 .btn-link-inactive {
-  --uno: "border-b-2 border-transparent text-xl font-sans hover:border-muted";
+  --uno: "border-b-2 border-transparent font-sans hover:border-muted";
 }
 .bento-cell {
   --uno: "bg-card border-2 border-muted p-4 shadow hover:border-secondary transition-all";
