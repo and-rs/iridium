@@ -1,4 +1,4 @@
-import { useLocation } from "@solidjs/router"
+import { A, useLocation } from "@solidjs/router"
 import { ThemeSwitch } from "./theme-switch"
 
 export const Nav = () => {
@@ -9,11 +9,7 @@ export const Nav = () => {
     <nav class="max-w-800px mx-a">
       <ul class="flex fixed gap-4 p-4 m-4 border-2 shadow z-60 border-muted bg-card">
         <li class={active("/") ? "btn-link-active" : "btn-link-inactive"}>
-          <a href="/">Home</a>
-        </li>
-
-        <li class={active("/team") ? "btn-link-active" : "btn-link-inactive"}>
-          <a href="/team">Team</a>
+          <A href="/">Home</A>
         </li>
 
         <li
@@ -21,7 +17,7 @@ export const Nav = () => {
             active("/case-studies") ? "btn-link-active" : "btn-link-inactive"
           }
         >
-          <a href="/case-studies">Case Studies</a>
+          <A href="/case-studies">Case Studies</A>
         </li>
         <ThemeSwitch />
       </ul>
