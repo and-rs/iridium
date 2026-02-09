@@ -1,6 +1,6 @@
 // @refresh reload
-import "virtual:uno.css"
 import { mount, StartClient } from "@solidjs/start/client"
+import "virtual:uno.css"
 
 const root = document.getElementById("app")
 if (!(root instanceof HTMLElement))

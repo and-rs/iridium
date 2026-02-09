@@ -1,4 +1,4 @@
-export const THEME_COLORS = {
+const HEX_COLORS = {
   foreground: { light: "#070b0d", dark: "#f8fbfc" },
   background: { light: "#f8fbfc", dark: "#070b0d" },
   card: { light: "#edf5f7", dark: "#0c1317" },
@@ -10,14 +10,23 @@ export const THEME_COLORS = {
   success: { light: "#519749", dark: "#6fb668" },
 } as const
 
-export function hexToColorSrgb(hex: string): string {
+// Normalize hex to color(srgb X X X)
+export function toSrgb(hex: string): string {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
   if (!result) return hex
-  const r = parseInt(result[1], 16) / 255
-  const g = parseInt(result[2], 16) / 255
-  const b = parseInt(result[3], 16) / 255
+  const [r, g, b] = [1, 2, 3].map((i) => parseInt(result[i], 16) / 255)
   return `color(srgb ${r} ${g} ${b})`
 }
+
+export const THEME_COLORS = Object.fromEntries(
+  Object.entries(HEX_COLORS).map(([key, modes]) => [
+    key,
+    {
+      light: toSrgb(modes.light),
+      dark: toSrgb(modes.dark),
+    },
+  ]),
+) as typeof HEX_COLORS
 
 export type ThemeMode = "light" | "dark"
 

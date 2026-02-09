@@ -1,7 +1,7 @@
 import { animate, remove, splitText } from "animejs"
 import { onCleanup, onMount } from "solid-js"
 import { Dynamic } from "solid-js/web"
-import { getThemeClient, hexToColorSrgb, THEME_COLORS } from "../lib/theme"
+import { getThemeClient, THEME_COLORS } from "../lib/theme"
 import { Logo } from "./logo"
 
 type BrandSize = "sm" | "md" | "lg"
@@ -29,8 +29,8 @@ export const Brand = (props: { size?: BrandSize; class?: string }) => {
           skew: active ? -10 : 0,
           translateX: active ? 10 : 0,
           color: active
-            ? hexToColorSrgb(THEME_COLORS.success[theme])
-            : hexToColorSrgb(THEME_COLORS.light[theme]),
+            ? THEME_COLORS.success[theme]
+            : THEME_COLORS.light[theme],
           duration: 175,
           ease: "outQuint",
         })
@@ -47,7 +47,7 @@ export const Brand = (props: { size?: BrandSize; class?: string }) => {
   return (
     <div class={`flex items-center ${v.gap} ${props.class || ""}`}>
       <Logo class={v.logo} />
-      <Dynamic ref={ref} component={v.tag} class="brand-text">
+      <Dynamic ref={ref} component={v.tag} class="drop-shadow-lg/12 brand-text">
         Iridium
       </Dynamic>
     </div>
